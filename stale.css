@@ -61,6 +61,35 @@ header {
     left: 0;
     z-index: 100;
 }
+.smart-basket__min
+{
+    background-color: #000;
+    max-width: 23px;
+    max-height: 23px;
+    margin-top: 2px;
+    border: #fff;
+    
+}
+.smart-basket__min-icon{
+    color: var(--text-alter-color);
+}
+.smart-basket__min-icon:hover{
+    color: var(--bg-color);
+}
+
+.smart-basket__min-count{
+    color: #df582e;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.product__quantity{
+    margin-top: 5px;
+}
+.smart-basket__product-name{
+    display: flex;
+    max-width: 100px;
+}
+
 
 .nav {
     display: flex;

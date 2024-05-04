@@ -33,7 +33,7 @@
 
                 <!-- nav-icon-->
                 <div class="nav-icons">
-                    <a href="#"><i class='bx bx-shopping-bag' ></i></a>
+                    <a class="basket"></a>
                     <!-- nav-icon-->
                     <div class="menu-icon">
                         <div class="line1"></div>
@@ -103,7 +103,16 @@
                         Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
                         Светло-коричневый (дуб 3164),<br> 
                         Красно-коричневый (Махагон)</h2>
-                    <div class="product-info">
+                        <div class="product__quantity"></div>
+                    <div class="product-info"
+                    
+                    data-sb-id-or-vendor-code="001"
+                    data-sb-product-name="Разделочная доска деревянная"
+                    data-sb-product-price="2200"
+                    data-sb-product-quantity="2"
+                    data-sb-product-img="./images/product-1.jpg"
+                    >
+                    
                         <span>₽2.200</span>
                         <i class='bx bx-shopping-bag'></i>
                     </div>
@@ -118,7 +127,12 @@
                         Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
                         Светло-коричневый (дуб 3164),<br> 
                         Красно-коричневый (Махагон)</h2>
-                    <div class="product-info">
+                    <div class="product-info"
+                    data-sb-id-or-vendor-code="002"
+                    data-sb-product-name="Набор деревянных разделочных досок"
+                    data-sb-product-price="4000"
+                    data-sb-product-quantity="2"
+                    data-sb-product-img="./images/product-2.jpg">
                         <span>₽4.000</span>
                         <i class='bx bx-shopping-bag'></i>
                     </div>
@@ -132,7 +146,12 @@
                     <h2>Три цвета:<br> Темно-коричневый (дуб антик),<br> 
                         Светло-коричневый (дуб 3164),<br> 
                         Красно-коричневый (Махагон)</h2>
-                    <div class="product-info">
+                    <div class="product-info"
+                    data-sb-id-or-vendor-code="003"
+                    data-sb-product-name="Салфетница деревянная"
+                    data-sb-product-price="300"
+                    data-sb-product-quantity="2"
+                    data-sb-product-img="./images/product-3.jpg">>
                         <span>₽300</span>
                         <i class='bx bx-shopping-bag'></i>
                     </div>
@@ -312,5 +331,38 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--JS-->
     <script src="./js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css">
+
+<div class="smart-basket__wrapper"></div>
+
+<script src="./smartbasket/js/smartbasket.min.js"></script>
+
+	<script>
+		$(function () {
+			$('.smart-basket__wrapper').smbasket({
+				productElement: 'product-box',
+				buttonAddToBasket: 'product-info',
+				productPrice: 'product__price-number',
+				productSize: 'product__size-element',
+				
+				productQuantityWrapper: 'product__quantity',
+				smartBasketMinArea: 'basket',
+				countryCode: '+7',
+				smartBasketCurrency: '₽',
+                smartBasketMinIconPath: "./images/basket-solid-24 (1).png",
+
+				agreement: {
+					isRequired: true,
+					isChecked: true,
+					isLink: 'https://artstranger.ru/privacy.html',
+				},
+				nameIsRequired: false,
+			});
+		});
+	</script>
 </body>
 </html>
