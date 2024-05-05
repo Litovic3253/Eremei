@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Еремей</title>
     <link rel="stylesheet" href="stale.css" />
+    
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -49,8 +50,8 @@
             <h1>
                 Мастерская «Еремей», только с любовью к работе
             </h1>
-            <p>Мы производим различные изделия дерево и металл</p>
-                <a href="#" class="bth">
+            <p>Мы производим различные изделия из дерева и металла</p>
+                <a href="#products" class="bth">
                     <span>Заказать</span>
                     <i class='bx bx-up-arrow-alt'></i>
                 </a>
@@ -335,18 +336,19 @@
         <div class="book-overlay"></div>
         <div class="book-data">
             <h2>Контакты</h2>
-            <form action="book">
+            <form action="mail.php" method="POST">
                 <div class="input-box">
                     <i class='bx bx-phone-call' ></i>
-                    <input type="tel" name="" placeholder="Номер" id="">
+                    <input value="" class="tel" placeholder="Номер" name="number">
                 </div>
                 <div class="input-box">
                     <i class='bx bx-user'></i>
-                    <input type="number" name="" placeholder="Имя" id="">
-                </div>
-                <a href="#" class="book-bth">Отправить</a>
+                    <input type="Text" name="user_name" placeholder="Имя">
+                </div> 
+                <button type="submit" value="" class="book-bth">Отправить</button>
             </form>
-            <p>Спасибо, что выбираете нас</p>
+            <p>Оставьте свои контактные данные и наш менеджер свяжется с вами для дальнейшей консультации.</p>
+            <p>Спасибо, что выбираете нас!</p>
         </div>
     </section>
 
@@ -372,40 +374,17 @@
         <script src="https://unpkg.com/scrollreveal"></script>
        <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!--JS-->
-    <script src="./js/main.js"></script>
 
+    <!--Basket-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 
     <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css">
 
-<div class="smart-basket__wrapper"></div>
+    <div class="smart-basket__wrapper"></div>
+    <script src="./smartbasket/js/smartbasket.min.js"></script>
 
-<script src="./smartbasket/js/smartbasket.min.js"></script>
-
-	<script>
-		$(function () {
-			$('.smart-basket__wrapper').smbasket({
-				productElement: 'product-box',
-				buttonAddToBasket: 'product-info',
-				productPrice: 'product__price-number',
-				productSize: 'product__size-element',
-				
-				productQuantityWrapper: 'product__quantity',
-				smartBasketMinArea: 'basket',
-				countryCode: '+7',
-				smartBasketCurrency: '₽',
-                smartBasketMinIconPath: "./images/basket-solid-24 (1).png",
-
-				agreement: {
-					isRequired: true,
-					isChecked: true,
-					isLink: 'https://artstranger.ru/privacy.html',
-				},
-				nameIsRequired: false,
-			});
-		});
-	</script>
+    <!--JS-->
+    <script src="./js/main.js"></script>
+    
 </body>
 </html>

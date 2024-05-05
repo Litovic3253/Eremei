@@ -60,17 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (is_array($value) || $value instanceof Traversable) {
 				foreach ($value as $k => $v) {
 
-					if($k == 'productImg'){
-						$productImg = '<img src="' . $v . '" width="100" height="100" alt="картинка товара">';
-						$body.=
-							'
-											<td style="width: 100px; padding-top:15px; padding-bottom:15px; padding-right:15px; padding-left:15px; text-align:center; border-top:1px; border-left:1px; border-right:0; border-bottom:0; border-color:#e2e2e2; border-style: solid;" >
-											<div style="padding: 5px;">
-											'
-												. $productImg .
-											'
-											</div></td>';
-					}
+					
 					if($k == 'productName'){
 						$body.=
 							'<td style="width: 300px;  padding-top:15px; padding-bottom:15px; padding-right:15px; padding-left:15px; text-align:center; border-top:1px; border-left:1px; border-right:0; border-bottom:0; border-color:#e2e2e2; border-style: solid;" >
@@ -159,9 +149,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		$mail->setFrom(SENDER);
     $mail->addAddress(CATCHER);
-    if(defined(CATCHER2)){
-        $mail->addAddress(CATCHER2);
-    }
     $mail->CharSet = CHARSET;
     $mail->isHTML(true);
 		$mail->Subject = SUBJECT; // Заголовок письма
