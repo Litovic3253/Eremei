@@ -27,8 +27,8 @@ var swiper = new Swiper(".mySwiper", {
 
   const animate = ScrollReveal({
     origin: 'top',
-    distance: '60px',
-    duration: '1500',
+    distance: '35px',
+    duration: '1300',
     delay: '100',
   });
 
