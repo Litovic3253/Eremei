@@ -791,7 +791,6 @@ header {
 
 .cart {
 	position: relative;
-	padding: 40px 19px;
 	transition: background-color 0.3s;
 }
 

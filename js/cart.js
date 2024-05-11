@@ -20,7 +20,7 @@ const randomId = () => {
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
 const randomOrder = () => {
-	return Math.floor(Math.random()*89999+10000);
+	return Math.floor(Math.random() * 6);
 };
 
 const priceWithoutSpaces = (str) => {
@@ -71,14 +71,14 @@ const generateCartProduct = (img, title, price, id, quantity) => {
 const deleteProducts = (productParent) => {
 	let id = productParent.querySelector('.cart-product').dataset.id;
 	document.querySelector(`.product-box[data-id="${id}"]`).querySelector('.product__btn').disabled = false;
-	let quantity = parseInt(productParent.querySelector('.quantity').textContent);
+	let quantity = parseInt(productParent.querySelector('.cart-product__quantity').textContent);
 	let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.cart-product__price').textContent));
 	
 	minusFullPrice(currentPrice * quantity);
 	printFullPrice();
 	
 	productParent.remove();
-	totalQuantity -= parseInt(quantity);
+	totalQuantity -= quantity;
 	
 	printQuantity(totalQuantity);
 };
@@ -188,7 +188,7 @@ document.querySelector('.order').addEventListener('submit', (e) => {
 	let self = e.currentTarget;
 
 	let formData = new FormData(self);
-	let orderId = document.querySelector('.order-modal__number').textContent;
+	let orderId = document.querySelector('.order-modal__number').textContent
 	let name = self.querySelector('[name="Имя"]').value;
 	let tel = self.querySelector('[name="Телефон"]').value;
 	let mail = self.querySelector('[name="Email"]').value;
