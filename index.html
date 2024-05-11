@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Еремей</title>
     <link rel="stylesheet" href="stale.css" />
+    <link rel="stylesheet" href="./Basket/css/simplebar.css">
+    <link rel="stylesheet" href="libs/modal/modal.css"> 
     
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <!-- Link Swiper's CSS -->
@@ -16,13 +18,10 @@
     <!-- header-->
     <header>
         <div class="nav container">
-
         <!-- menu icon-->
         <i class='bx bx-menu' id="menu-icon"></i>
-
                 <!-- logo-->
                 <a href='#home' class="logo">ЕРЕМЕЙ</a>
-
                 <!-- navbar-->
                 <div class="navbar">
                     <a href="#home" class="nav-link">Главная</a>
@@ -31,10 +30,30 @@
                     <a href="#team" class="nav-link">Команда</a>
                     <a href="#book" class="nav-link">Контакты</a>
                 </div>
+                <!-- Basket -->
+                <div class="header__cart cart" tabindex="0">
+                   
+                        <img src="./images/basket-solid-24 (1).png">
+                        <div class="cart-text">
+                            <span class="cart__quantity" >0</span>
+                        </div>
+                        
+                        <div class="cart-content">
+                            <ul class="cart-content__list" data-simplebar> 
+                            </ul>
+                            <div class="cart-content__bottom">
+                                <div class="cart-content__fullprice"></div>
+                                <span>Итого:</span>
+                                <span class="fullprice"></span>
+                            </div>
+                            <button class="cart-content__btn btn" data-graph-path="modal" data-graph-animation="fadeInUp">Перейти в корзину</button>
+                    
+                </div>
 
                 <!-- nav-icon-->
                 <div class="nav-icons">
                     <a class="basket"></a>
+                    
                     <!-- nav-icon-->
                     <div class="menu-icon">
                         <div class="line1"></div>
@@ -98,146 +117,118 @@
             </div>
             <!--product content-->
             <div class="product-content">
-
                 <!--box 1-->
                 <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
+                    <img class="img"   src="./images/product-1.jpg" alt="">
+                    <P class="product__title">Разделочная </P>
                     <h2>Материал: ясень<br>
                         Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
                         Светло-коричневый (дуб 3164),<br> 
                         Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="001"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="2"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
-                        <i class='bx bx-shopping-bag'></i>
+                         <div class="count" >
+                        <button class="minus">-</button>
+                        <input type="number " value="1" class="number" name="input"></input>
+                        <button class="plus">+</button>
+                      </div>
+                    <div class="product-info">
+                        <span class="price">2 300</span>
+                        <button class="product__btn btn">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                        
                     </div>
                 </div>
 
-                <!--box 1-->
-                <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
-                    <h2>Материал: ясень<br>
-                        Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
-                        Светло-коричневый (дуб 3164),<br> 
-                        Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="002"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="2"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
-                        <i class='bx bx-shopping-bag'></i>
+                <!--box2-->
+               
+               <div class="product-box">
+                <img class="img"   src="./images/product-1.jpg" alt="">
+                <P class="product__title">Разделочная доска </P>
+                <h2>Материал: ясень<br>
+                    Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
+                    Светло-коричневый (дуб 3164),<br> 
+                    Красно-коричневый (Махагон)</h2>
+                    <div class="count" >
+                        <button class="minus">-</button>
+                        <input type="number " value="1" class="number" name="input"></input>
+                        <button class="plus">+</button>
+                      </div>
+                <div class="product-info">
+                    <div class="price_tag">
+                        <span class="price">2 400</span>
                     </div>
+                    <button class="product__btn btn">
+                        <i class='bx bx-shopping-bag'></i>
+                    </button>
+                    
                 </div>
+            </div>
 
-                <!--box 1-->
-                <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
-                    <h2>Материал: ясень<br>
-                        Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
-                        Светло-коричневый (дуб 3164),<br> 
-                        Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="003"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="2"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
+            <!--box3-->
+             
+             <div class="product-box">
+                <img class="img"   src="./images/product-1.jpg" alt="">
+                <P class="product__title">Разделочная доска деревянная</P>
+                <h2>Материал: ясень<br>
+                    Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
+                    Светло-коричневый (дуб 3164),<br> 
+                    Красно-коричневый (Махагон)</h2>
+                    <div class="count">
+                        <button class="minus">-</button>
+                        <input type="number " value="1" class="number" name="input"></input>
+                        <button class="plus">+</button>
+                      </div>
+                <div class="product-info">
+                    <span class="price">2 200</span>
+                    <button class="product__btn btn">
                         <i class='bx bx-shopping-bag'></i>
-                    </div>
-                </div>
-
-                <!--box 1-->
-                <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
-                    <h2>Материал: ясень<br>
-                        Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
-                        Светло-коричневый (дуб 3164),<br> 
-                        Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="004"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="2"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
-                        <i class='bx bx-shopping-bag'></i>
-                    </div>
-                </div>
-
-                <!--box 1-->
-                <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
-                    <h2>Материал: ясень<br>
-                        Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
-                        Светло-коричневый (дуб 3164),<br> 
-                        Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="005"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="2"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
-                        <i class='bx bx-shopping-bag'></i>
-                    </div>
-                </div>
-                
-                <!--box 1-->
-                <div class="product-box">
-                    <img src="./images/product-1.jpg" alt="">
-                    <P>Разделочная доска деревянная</P>
-                    <h2>Материал: ясень<br>
-                        Цвета досок:<br> Темно-коричневый (дуб антик),<br> 
-                        Светло-коричневый (дуб 3164),<br> 
-                        Красно-коричневый (Махагон)</h2>
-                        <div class="product__quantity"></div>
-                    <div class="product-info"
-                    
-                    data-sb-id-or-vendor-code="006"
-                    data-sb-product-name="Разделочная доска деревянная"
-                    data-sb-product-price="2200"
-                    data-sb-product-quantity="6"
-                    data-sb-product-img="./images/product-1_box.png"
-                    >
-                    
-                        <span>₽2.200</span>
-                        <i class='bx bx-shopping-bag'></i>
-                    </div>
+                    </button>
                 </div>
             </div>
         </section>
+
+        <div class="modal">
+            <div class="modal__container order-modal" role="dialog" aria-modal="true" data-graph-target="modal">
+                <div class="modal-content order-modal__content">
+                    <div class="order-modal__top">
+                        <h2 class="order-modal__title">Оформление заказа</h2>
+                        <span class="order-modal__number">Заказ № </span>
+                    </div>
+                    <div class="order-modal__info">
+                        <div class="order-modal__quantity order-modal__info-item">Товаров в заказе: <span></span></div>
+                        <div class="order-modal__summ order-modal__info-item">Общая сумма заказа: <span></span></div>
+                        <div class="order-modal__products order-modal__info-item">
+                            <button class="order-modal__btn">Состав заказа</button>
+                            <ul class="order-modal__list">
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="mail.php" class="order-modal__form order">
+                        <label class="order__label">
+                            <span class="order__text">Ваше имя</span>
+                            <input type="text" name="Имя" class="order__input">
+                        </label>
+                        <label class="order__label">
+                            <span class="order__text">Номер телефона</span>
+                            <input type="tel" name="Телефон" class="order__input" placeholder="+7 (___)___-__-__">
+                        </label>
+                        <label class="order__label">
+                            <span class="order__text">Ваше имя</span>
+                            <input type="email" name="Email" class="order__input" placeholder="post@gmail.com">
+                        </label>
+                        <button type="submit" class="order__btn btn">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
 
     <!--team-->
     <section class="team container" id="team">
@@ -376,12 +367,13 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--Basket-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <link rel="stylesheet" href="smartbasket/css/smartbasket.min.css">
-
-    <div class="smart-basket__wrapper"></div>
-    <script src="./smartbasket/js/smartbasket.min.js"></script>
+    <script src="./js/simplebar.js"></script>
+    <script src='./libs/modal/modal.js'></script>
+	<script src="./js/product.js"></script>
+	<script src="./js/fixed-block.js"></script>
+	<script src="./js/cart.js"></script>
+    <script src="./js/counter.js"></script>
+    
 
     <!--JS-->
     <script src="./js/main.js"></script>

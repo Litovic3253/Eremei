@@ -1,35 +1,88 @@
-<?php 
+<?
+require_once 'PHPMailer/PHPMailerAutoload.php';
 
-require_once('phpmailer/PHPMailerAutoload.php');
+$admin_email = array();
+foreach ( $_POST["admin_email"] as $key => $value ) {
+	array_push($admin_email, $value);
+}
+
+$form_subject = trim($_POST["form_subject"]);
 
 $mail = new PHPMailer;
-$mail->CharSet = 'utf-8';
-
-$name = $_POST['user_name'];
-$phone = $_POST['number'];
+$mail->CharSet = 'UTF-8';
 
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+$mail->SMTPDebug = 0;
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  																							// Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPSecure = 'ssl'; 
+$mail->Port = 465;
 $mail->Username = 'trusttechmailer@gmail.com'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = 'duhspwbygjgwaejp'; // Ваш пароль от почты с которой будут отправляться письма
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
+$mail->Password = 'duhspwbygjgwaejp';
 
-$mail->setFrom('trusttechmailer@gmail.com'); // от кого будет уходить письмо?
-$mail->addAddress('nelq.cz@gmail.com');     // Кому будет уходить письмо 
-$mail->isHTML(true);                                  // Set email format to HTML
+$jsonText = $_POST['Товары'];
+$myArray = json_decode($jsonText, true);
 
-$mail->Subject = 'Заявка сайта для консультации';
-$mail->Body    = '' .$name . ' оставил заявку на консультацию, его телефон ' .$phone;
-$mail->AltBody = '';
+$prod = '';
 
-if(!$mail->send()) {
-    echo 'Error';
-} else {
-    header('location: thank-you.html');
-    }
+foreach ($myArray as $key => $value) {
+		$quantity = $value["quantity"];
+	    $title = $value["title"];
+	    $price = $value["price"];
+	    $prod .= "
+			<tr>
+				<td style='padding: 10px; border: #e9e9e9 1px solid;'>$title</td>
+				<td style='padding: 10px; border: #e9e9e9 1px solid;'>$price</td>
+				<td style='padding: 10px; border: #e9e9e9 1px solid;'>$quantity</td>
+			</tr>
+			";
+	}
+
+$c = true;
+$message = '';
+foreach ( $_POST as $key => $value ) {
+	if ( $value != ""  && $key != "admin_email" && $key != "form_subject"  && $key != "Товары") {
+		if (is_array($value)) {
+			$val_text = '';
+			foreach ($value as $val) {
+				if ($val && $val != '') {
+					$val_text .= ($val_text==''?'':', ').$val;
+				}
+			}
+			$value = $val_text;
+		}
+		$message .= "
+		" . ( ($c = !$c) ? '<tr>':'<tr>' ) . "
+		<td style='padding: 10px; width: auto;'><b>$key:</b></td>
+		<td style='padding: 10px;width: 100%;'>$value</td>
+		</tr>
+		";
+	}
+}
+$message = "<table style='width: 50%;'>$message . $prod</table>";
+
+
+// От кого
+$mail->setFrom('trusttechmailer@no-reply');
+
+// Кому
+$mail->addAddress('nelq.cz@gmail.com');
+// Тема письма
+$mail->Subject = 'Заказ с сайта';
+
+// Тело письма
+$body = $message;
+// $mail->isHTML(true);  это если прям верстка
+$mail->msgHTML($body);
+
+
+// Приложения
+if ($_FILES){
+	foreach ( $_FILES['file']['tmp_name'] as $key => $value ) {
+		$mail->addAttachment($value, $_FILES['file']['name'][$key]);
+	}
+}
+$mail->send();
 ?>

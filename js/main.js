@@ -81,29 +81,3 @@ var swiper = new Swiper(".mySwiper", {
     });
   
   });
-
-
-
-//SmartBasket Settings//
-
-  $(function () {
-    $('.smart-basket__wrapper').smbasket({
-        productElement: 'product-box',
-        buttonAddToBasket: 'product-info',
-        productPrice: 'product__price-number',
-        productSize: 'product__size-element',
-        
-        productQuantityWrapper: 'product__quantity',
-        smartBasketMinArea: 'basket',
-        countryCode: '+7',
-        smartBasketCurrency: '₽',
-        smartBasketMinIconPath: "./images/basket-solid-24 (1).png",
-
-        agreement: {
-            isRequired: true,
-            isChecked: true,
-            isLink: 'https://artstranger.ru/privacy.html',
-        },
-        nameIsRequired: false,
-    });
-});
