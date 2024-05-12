@@ -20,7 +20,7 @@ const randomId = () => {
 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
 const randomOrder = () => {
-	return Math.floor(Math.random() * 6);
+	return Math.floor(100000 + Math.random() * 900000);
 };
 
 const priceWithoutSpaces = (str) => {
@@ -62,7 +62,7 @@ const generateCartProduct = (img, title, price, id, quantity) => {
 					<span class="cart-product__quantity">${quantity}<?span>
 					
 				</div>
-				<button type= "button" class="cart-product__delete" aria-label="Удалить товар"></button>
+				<div class="cart-product__delete" aria-label="Удалить товар"></div>
 			</article>
 		</li>
 	`;

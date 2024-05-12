@@ -13,6 +13,12 @@ var swiper = new Swiper(".mySwiper", {
 
   let menu = document.querySelector('.menu-icon');
   let navbar = document.querySelector('.navbar');
+  let basket = document.querySelector('.header__cart');
+
+  basket.onclick = () => {
+    basket.classList.toggle("cart.active");
+  }
+
 
   menu.onclick = () => {
     menu.classList.toggle("move");
